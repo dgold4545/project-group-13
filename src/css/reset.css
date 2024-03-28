@@ -1,4 +1,40 @@
+/* Fonts styles */
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 600;
+  font-style: normal;
+  src: url(/fonts/Gilroy/Gilroy-Semibold.woff),
+    url(/fonts/Gilroy/Gilroy-Semibold.woff2);
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-style: normal;
+  src: url(/fonts/Gilroy/Gilroy-Medium.woff),
+    url(/fonts/Gilroy/Gilroy-Medium.woff2);
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: normal;
+  font-style: normal;
+  src: url(/fonts/Gilroy/Gilroy-Regular.woff),
+    url(/fonts/Gilroy/Gilroy-Regular.woff2);
+}
+/* Root colors */
+:root {
+  --main: #0c0c0c;
+  --accent: #3350e9;
+  --background: #fbfbfb;
+  --cards: #f3f3f3;
+}
 /* Reset styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 h1,
 h2,
 h3,
@@ -9,9 +45,9 @@ p {
   margin: 0;
 }
 
-p:last-child {
+/* p:last-child {
   margin-bottom: 0;
-}
+} */
 
 ul {
   margin: 0;
@@ -32,4 +68,70 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+body {
+  font-family: 'Gilroy';
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* mobile - без медіа правила, щоб це правило примінялося від 0 до 768 */
+.container {
+  max-width: 375px;
+  min-width: 320px;
+  padding: 0 20px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+/* desktop */
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 65px;
+  }
+}
+
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
